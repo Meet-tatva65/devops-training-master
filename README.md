@@ -46,25 +46,25 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 
 ## Steps I Have Performed in AWS Project
 
-### Push Your Repo in GitHub
+### 1) Push Your Repo in GitHub
 - Push your code into GitHub containing:
   - CloudFormation files  
   - Frontend  
   - Lambda (backend)  
   - `buildspec.yml` file  
 
-### Created an EC2 Instance
+### 2) Created an EC2 Instance
 - Go to **AWS Console → EC2 → Key Pairs → Create Key**  
 - Configure the key pair with the key name in EC2 instance **KeyName**
 
-### Created S3 Bucket
+### 3) Created S3 Bucket
 - Go to AWS Console → search for **S3**  
 - Click **Create Bucket**  
 - Give it a unique name (e.g., `my-devops-artifacts-bucket`)  
 - Select region (same as where Lambda will run)  
 - Leave other options default, then click **Create bucket**  
 
-### Create IAM Role for CodePipeline & CodeBuild
+### 4) Create IAM Role for CodePipeline & CodeBuild
 - Go to **IAM (Identity & Access Management)**  
 - Click **Roles → Create Role**  
 - Select AWS Service → **CodePipeline** (for pipeline role)  
@@ -77,7 +77,7 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 - Name the role: **CodePipelineServiceRole** (or any as per your choice)  
 - Repeat the process for **CodeBuild**, naming it **CodeBuildServiceRole** with similar S3 and Lambda access  
 
-### Create CodeBuild Project
+### 5) Create CodeBuild Project
 - Go to **CodeBuild service → Create build project**  
 - Name: `MyLambdaBuild` (or any appropriate name)  
 - Source provider: **CodePipeline** (not S3)  
@@ -85,7 +85,7 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 - Service Role: Choose **CodeBuildServiceRole**  
 - Click **Create project**  
 
-### Create CodePipeline
+### 6) Create CodePipeline
 - Go to **CodePipeline → Create pipeline**  
 - Pipeline name: `CI/CDPipeline` (or any appropriate name)  
 - Execution Mode: **Queued**  
@@ -109,7 +109,7 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 
 ---
 
-## Test the Deployment
+## 7) Test the Deployment
 - Make a code change in `lambda/app.py`  
 - Push the code to GitHub  
 - Check **CodePipeline → Pipeline executed automatically:**  
