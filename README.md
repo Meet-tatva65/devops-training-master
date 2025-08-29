@@ -123,19 +123,19 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 
 ## HereWith i am attaching my documents
 ## Image One:-
-![Pipeline Diagram](https://i.postimg.cc/NFsMdGjX/img-1.png)
+![1st Image](https://i.postimg.cc/NFsMdGjX/img-1.png)
 
 ## Image Two:-
-![Pipeline Diagram](https://i.postimg.cc/NfPMxcqy/img-2.png)
+![2nd Image](https://i.postimg.cc/NfPMxcqy/img-2.png)
 
 ## Image Three:-
-![Pipeline Diagram](https://i.postimg.cc/pVsX2Hd0/img-3.png)
+![3nd Image](https://i.postimg.cc/pVsX2Hd0/img-3.png)
 
 ## Image Four:-
-![Pipeline Diagram](https://i.postimg.cc/1z1yWRWz/img-4.png)
+![4rd Image](https://i.postimg.cc/1z1yWRWz/img-4.png)
 
 ## Final Pipeline
-![Pipeline Diagram](https://i.postimg.cc/fRJvHDV1/Pipeline.png)
+![CodePipeline](https://i.postimg.cc/fRJvHDV1/Pipeline.png)
 
 
 
@@ -146,3 +146,6 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 | 1       | EC2 Instance failed                     | The key-pair is mismatched (`devops-test-keypair`) doesn’t exist. | Key pair not found in the selected region       | Created new key-pair in the region                           | Resolved |
 | 2       | CloudFormation nested stack failed      | IAMRolesStack `CREATE_FAILED`                                 | Template URL used is of local path instead of S3 URL | Uploaded template to S3 and updated the `TemplateUrl` in `main.yml` | Resolved |
 | 3       | EC2 Instance Creation Failed – Free Tier Error | The specified instance type is not eligible for Free Tier.    | `t2.micro` is free but `t3.micro` is preferable | Changed `t2.micro` to `t3.micro` in `main.yml` and committed the changes | Resolved |
+
+## Error Stack Image
+![Error Stack Image](https://i.postimg.cc/zBRFdwps/Error-Stack-Image.png)
