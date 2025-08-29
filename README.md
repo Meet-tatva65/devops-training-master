@@ -136,3 +136,13 @@ Services like CodePipeline, CodeBuild, and CodeDeploy require roles to interact 
 
 ## Final Pipeline
 ![Pipeline Diagram](https://i.postimg.cc/fRJvHDV1/Pipeline.png)
+
+
+
+# Issue Documentation
+
+| Sr. No. | Issue                                   | Description                                                   | Root Cause                                     | Resolution                                                   | Status   |
+|---------|-----------------------------------------|---------------------------------------------------------------|------------------------------------------------|--------------------------------------------------------------|----------|
+| 1       | EC2 Instance failed                     | The key-pair is mismatched (`devops-test-keypair`) doesn’t exist. | Key pair not found in the selected region       | Created new key-pair in the region                           | Resolved |
+| 2       | CloudFormation nested stack failed      | IAMRolesStack `CREATE_FAILED`                                 | Template URL used is of local path instead of S3 URL | Uploaded template to S3 and updated the `TemplateUrl` in `main.yml` | Resolved |
+| 3       | EC2 Instance Creation Failed – Free Tier Error | The specified instance type is not eligible for Free Tier.    | `t2.micro` is free but `t3.micro` is preferable | Changed `t2.micro` to `t3.micro` in `main.yml` and committed the changes | Resolved |
